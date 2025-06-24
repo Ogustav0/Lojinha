@@ -1,0 +1,30 @@
+<?php
+include('conexao.php');
+
+$sql = "SELECT * FROM produtos";
+$resultado = mysqli_query($conexao,$sql);
+
+if(mysqli_num_rows($resultado) > 0){
+    echo '<a href="index.html" class="btn btn-primary w-100">Voltar</a>';
+    echo "<h2>Lista de Produtos</h2>";
+    echo "<table border='1' cellpadding='8'>";
+    echo "<tr><th>Nome</th><th>Descrição</th><th>Preço</th></tr>";
+
+    while ($produto = mysqli_fetch_assoc($resultado)){
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($produto['nomep']) . "</td>";
+        echo "<td>" . htmlspecialchars($produto['descricao']) . "</td>";
+        echo "<td>" . htmlspecialchars($produto['preco']) . "</td>";
+        echo "</tr>";
+    }
+    echo "</form>";
+}else {
+    echo "nenhum produto encontrado!";
+    echo '<a href="index.html" class="btn btn-primary w-100">Voltar</a>';
+}
+
+mysqli_close($conexao)
+
+?>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
