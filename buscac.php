@@ -29,7 +29,7 @@ if(mysqli_num_rows($resultado)>0){
 }
 
 mysqli_close($conexao);
-echo '</div>';
+
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

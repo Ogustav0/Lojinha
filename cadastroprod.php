@@ -15,7 +15,10 @@ $nomep,$descricao,$preco);
 
 //executa a query 
 if(mysqli_stmt_execute($stmt)){
-    echo "";
+    echo "<div class='container text-center'>";
+    echo "<h1>Cadastrado com sucesso!</h1><br><br>";
+    echo '<a href="index.html" class="btn btn-primary w-100">Voltar</a>';
+    echo "</div>";
 }else {
     echo "erro ao cadastrar" . mysqli_error($conexao);
 }
@@ -25,4 +28,3 @@ mysqli_stmt_close($stmt);
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<a href="index.html" class="btn btn-primary w-100">Voltar</a>
