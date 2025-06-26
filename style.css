@@ -15,7 +15,3 @@ body{
     align-items: center;
     background: #f37777;
 }
-div#imgs img{
-max-width: 100px;
-border-radius: 50%;
-}
