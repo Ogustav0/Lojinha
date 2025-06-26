@@ -4,14 +4,15 @@ include('conexao.php');
 $sql = "SELECT * FROM clientes";
 $resultado = mysqli_query($conexao,$sql);
 if(mysqli_num_rows($resultado)>0){
-    
+    echo "<div class='container text-center'>";
     echo '<a href="index.html" class="btn btn-primary w-100">Voltar</a>';
     echo "<h2>Lista de Clientes</h2>";
-    echo "<table border='1' cellpadding='8'>";
-    echo "<tr><th>Nome</th><th>Email</th><th>Telefone</th><th>CPF</th><th>Data Nasc.</th><th>Endereço</th></tr>";
+    echo "<table class='table table-bordered w-auto mx-auto'>";
+    echo "<tr><th>Id</th><th>Nome</th><th>Email</th><th>Telefone</th><th>CPF</th><th>Data Nasc.</th><th>Endereço</th></tr>";
 
     while ($cliente = mysqli_fetch_assoc($resultado)){
         echo "<tr>";
+        echo "<td>" . htmlspecialchars($cliente['id']) . "</td>";
         echo "<td>" . htmlspecialchars($cliente['nome']). "</td>";
         echo "<td>" . htmlspecialchars($cliente['email']). "</td>";
         echo "<td>" . htmlspecialchars($cliente['telefone']) . "</td>";
@@ -21,7 +22,7 @@ if(mysqli_num_rows($resultado)>0){
         echo "</tr>";
     }
     echo "</form>";
-    
+    echo "</div>";
 }else {
     echo "nenhum usuario cadastrado!";
     echo '<a href="index.html" class="btn btn-primary w-100">Voltar</a>';

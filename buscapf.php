@@ -33,11 +33,12 @@ $nomep = $_GET['nomep'] ?? '';
         if(mysqli_num_rows($resultado) > 0){
             echo '<div class="container text-center mt-5">';
             echo "<h3>Resultado da busca:</h3>";
-            echo "<table class='border='1' cellpadding='8''>";
-            echo "<tr><th>Nome do Produto</th><th>Descrição</th><th>Preço</th></tr>";
+            echo "<table class='table table-bordered w-auto mx-auto'>";
+            echo "<tr><th>Id</th><th>Nome do Produto</th><th>Descrição</th><th>Preço</th></tr>";
         while($produto = mysqli_fetch_assoc($resultado)){
 
             echo "<tr>";
+            echo "<td>" . htmlspecialchars($cliente['id']) . "</td>";
             echo "<td>" . htmlspecialchars($produto['nomep']) . "</td>";
             echo "<td>" . htmlspecialchars($produto['descricao']) . "</td>";
             echo "<td> R$ " . htmlspecialchars($produto['preco']) . "</td>";
