@@ -1,0 +1,17 @@
+div.fixed{
+    position: relative;
+    padding: 10px;
+    background-color: rgba(223,31,32,0.8);
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f37777;
+}
