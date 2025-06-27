@@ -69,7 +69,5 @@ if(mysqli_num_rows($resultado)>0){
     echo "</div>";
 }else {
     echo "nenhum usuario cadastrado!";
-    
-
 }
 ?>
